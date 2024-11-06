@@ -26,9 +26,7 @@ const HomePage = () => {
           <p className="subtitle">Restaurante</p>
           <div className="divider"></div>
           <p className="description-text">
-            Somos un restaurante líder con 5 años de tradición, enfocado en preservar la sazón de la gastronomía peruana.
-            El Goloso es más que un restaurante, es un hogar y lo demostramos en la calidez de nuestra atención en cada
-            visita a esta casa y en los detalles de cada plato.
+            
           </p>
           <button className="read-more-button">Leer Más</button>
         </div>
