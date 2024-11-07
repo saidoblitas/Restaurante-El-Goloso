@@ -1,9 +1,11 @@
+/* Estilos del HomePage */
 .home-container {
   position: relative;
   background-size: cover;
   background-position: center;
   background-attachment: fixed;
-  height: 700px; 
+  background-image: url('https://www.eltrinche.com/wp-content/uploads/2023/07/cebiche-3.jpeg');
+  height: 700px;
   display: flex;
   flex-direction: column;
   justify-content: center;
@@ -11,7 +13,7 @@
   text-align: center;
   color: white;
   padding: 20px;
-  font-weight: bold; 
+  font-weight: bold;
 }
 
 .home-container::before {
@@ -21,7 +23,7 @@
   left: 0;
   right: 0;
   bottom: 0;
-  background-color: rgba(0, 0, 0, 0.4); 
+  background-color: rgba(0, 0, 0, 0.4);
   z-index: 1;
 }
 
@@ -33,18 +35,37 @@
   z-index: 2;
 }
 
-.reserve-button {
-  background-color: #ff5722;
+/* Estilos para botones */
+.reserve-button, .read-more-button {
+  background: linear-gradient(90deg, #0097b2, #7ed957);  /* Gradiente igual al navbar */
   color: white;
   border: none;
   padding: 10px 20px;
   font-size: 1rem;
   cursor: pointer;
-  transition: background-color 0.3s ease;
+  transition: all 0.3s ease;
+  display: inline-block;
+  font-weight: bold;
 }
 
-.reserve-button:hover {
-  background-color: #e64a19;
+.reserve-button:hover, .read-more-button:hover {
+  background-color: white;
+  color: black;
+  font-weight: bold;
+  font-size: 1.1rem; /* Aumenta el tamaño del texto al pasar el cursor */
+  border-radius: 5px;
+  transform: translateY(-3px);
+  background: white; /* El fondo cambia a blanco */
+}
+
+.reserve-button:focus, .read-more-button:focus {
+  background-color: white;
+  color: black;
+  font-weight: bold;
+  font-size: 1.1rem; /* Aumenta el tamaño del texto al hacer foco */
+  border-radius: 5px;
+  transform: translateY(-3px);
+  background: white; /* El fondo cambia a blanco */
 }
 
 .content-section {
@@ -53,13 +74,13 @@
   text-align: center;
   color: #333;
   align-items: center;
-  justify-content: center; 
+  justify-content: center;
   gap: 40px;
 }
 
 .text-content {
   max-width: 60%;
-  text-align: center; 
+  text-align: center;
 }
 
 .content-section h2 {
@@ -84,21 +105,18 @@
   max-width: 600px;
   margin: 0 auto 20px;
   line-height: 1.6;
+  transition: max-height 0.3s ease, padding 0.3s ease;
 }
 
-.read-more-button {
-  background-color: #ff5722;
-  color: white;
-  border: none;
-  padding: 10px 20px;
-  font-size: 1rem;
-  cursor: pointer;
-  transition: background-color 0.3s ease;
+.description-text.expanded {
+  max-height: 800px;  
+  padding-bottom: 30px;
 }
 
-.read-more-button:hover {
-  background-color: #e64a19;
+.expanded-text {
+  margin-top: 20px; 
 }
+
 
 .image-gallery {
   display: flex;
@@ -106,22 +124,56 @@
   gap: 20px;
 }
 
-.main-image {
-  width: 350px; 
-  height: 250px;
+.main-image, .side-images img {
+  width: 220px;  
+  height: 150px; 
   object-fit: cover;
+  cursor: pointer;
+}
+
+.image-gallery img {
   border-radius: 8px;
 }
 
-.side-images {
+
+.image-modal {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: rgba(0, 0, 0, 0.8);
   display: flex;
-  flex-direction: column;
-  gap: 20px;
+  justify-content: center;
+  align-items: center;
+  z-index: 999;
 }
 
-.side-images img {
-  width: 180px; 
-  height: 120px;
-  object-fit: cover;
-  border-radius: 8px;
+.modal-content {
+  position: relative;
+  max-width: 50%;
+  max-height: 80%;
+  overflow: hidden;
+}
+
+.modal-image {
+  width: 100%;
+  height: auto;
+}
+
+.close-button {
+  position: absolute;
+  top: 10px;
+  right: 10px;
+  color: white;
+  font-size: 30px;
+  cursor: pointer;
+  background: rgba(0, 0, 0, 0.5);
+  padding: 5px;
+  border-radius: 50%;
+  transition: background 0.3s ease;
+}
+
+.close-button:hover {
+  background: rgba(0, 0, 0, 0.8);
 }

@@ -1,21 +1,82 @@
 .footer {
-    background: linear-gradient(90deg, #0097b2, #7ed957); 
-    padding: 3px 0;
-    position: relative;
-    bottom: 0;
-    width: 100%;
-    text-align: center;
+    position: relative; /* Necesario para la capa adicional */
+    background: linear-gradient(90deg, #0097b2, #7ed957); /* El degradado original */
+    padding: 10px 0; /* Reducir el padding del footer */
     color: white;
+    text-align: center;
+    font-weight: bold; /* Hacer todo el texto en negrita */
+}
+
+.footer::after {
+    content: ""; /* Crear el contenido para la capa */
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: rgba(128, 128, 128, 0.6); /* Gris con opacidad */
+    z-index: -1; /* Colocar la capa detrás del contenido */
 }
 
 .footer-content {
-    margin: 0;
+    display: flex;
+    justify-content: space-around;
+    flex-wrap: wrap;
+    padding: 10px 0; /* Reducir el padding del contenido interno */
+    border-top: 1px solid rgba(255, 255, 255, 0.3);
+    text-align: center;
 }
 
-.footer-text {
-    margin: 5px 0;
-    font-size: 16px;
-    font-weight: normal;
+.footer-section {
+    flex: 1;
+    margin: 5px;
+    min-width: 180px; /* Ajustar el ancho mínimo */
 }
 
+.footer-logo {
+    max-width: 150px; /* Reducir el tamaño máximo del logo */
+    margin-bottom: 5px;
+}
 
+.footer-divider {
+    border-left: 1px solid rgba(255, 255, 255, 0.3);
+    height: auto;
+    margin: 0 10px; /* Reducir el margen alrededor de la línea divisoria */
+}
+
+.social-icons a {
+    margin: 0 8px;
+    color: white;
+    font-size: 18px; /* Reducir el tamaño de los iconos */
+}
+
+.site-map ul {
+    list-style: none;
+    padding: 0;
+    font-size: 0.85rem; /* Disminuir el tamaño del texto */
+    line-height: 1.4; /* Reducir el espaciado entre líneas */
+}
+
+.site-map li {
+    margin: 3px 0; /* Reducir el margen entre los elementos del mapa del sitio */
+}
+
+.site-map a {
+    color: white;
+    text-decoration: none;
+}
+
+.contact-section h5, .site-map h4 {
+    margin-bottom: 8px;
+}
+
+.contact p, .footer-text {
+    margin: 3px 0; /* Reducir el margen para disminuir el espacio entre párrafos */
+    font-size: 13px; /* Reducir el tamaño del texto */
+}
+
+.footer-bottom {
+    border-top: 1px solid rgba(255, 255, 255, 0.3);
+    padding-top: 5px;
+    font-size: 13px; /* Reducir el tamaño del texto en la sección inferior */
+}
