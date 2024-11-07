@@ -4,6 +4,15 @@ import './HomePage.css';
 const HomePage = () => {
   const [isExpanded, setIsExpanded] = useState(false);
   const [selectedImage, setSelectedImage] = useState(null);
+  const [isModalOpen, setIsModalOpen] = useState(false);  
+  const [formData, setFormData] = useState({
+    nombre: '',
+    apellido: '',
+    numero: '',
+    correo: '',
+    fecha: '',
+    hora: ''
+  });
 
   const toggleContent = () => {
     setIsExpanded(!isExpanded);
@@ -17,6 +26,23 @@ const HomePage = () => {
     setSelectedImage(null);
   };
 
+  const handleInputChange = (e) => {
+    const { name, value } = e.target;
+    setFormData({
+      ...formData,
+      [name]: value
+    });
+  };
+
+  const handleConfirmReservation = () => {
+    
+    window.location.href = `/reservaciones?nombre=${formData.nombre}&apellido=${formData.apellido}&numero=${formData.numero}&correo=${formData.correo}&fecha=${formData.fecha}&hora=${formData.hora}`;
+  };
+
+  const handleCancelReservation = () => {
+    setIsModalOpen(false); 
+  };
+
   return (
     <div>
       <div className="home-container">
@@ -28,7 +54,9 @@ const HomePage = () => {
           <p><strong>Horario:</strong> Lunes a Domingo, 07:00 am - 11:00 pm</p>
           <p><strong>Dirección:</strong> 1427 Alfonso Ugarte</p>
         </div>
-        <button className="reserve-button" onMouseDown={(e) => e.preventDefault()}>Reservar ahora</button>
+        <button className="reserve-button" onMouseDown={(e) => e.preventDefault()} onClick={() => setIsModalOpen(true)}>
+          Reservar ahora
+        </button>
       </div>
 
       <div className="content-section">
@@ -38,7 +66,7 @@ const HomePage = () => {
           <div className="divider"></div>
           
           <p className={`description-text ${isExpanded ? 'expanded' : ''}`}>
-            Somos un restaurante líder con mas de 10 años de tradición, enfocado en preservar la sazón de la gastronomía peruana.
+            Somos un restaurante líder con más de 10 años de tradición, enfocado en preservar la sazón de la gastronomía peruana.
             El Goloso es más que un restaurante, es un hogar y lo demostramos en la calidez de nuestra atención en cada
             visita a esta casa y en los detalles de cada plato.
             
@@ -80,6 +108,61 @@ const HomePage = () => {
           <div className="modal-content">
             <img src={selectedImage} alt="Selected" className="modal-image" />
             <span className="close-button" onClick={closeImageModal}>X</span>
+          </div>
+        </div>
+      )}
+
+
+      {isModalOpen && (
+        <div className="reservation-form">
+          <div className="form-container">
+            <h2>Formulario de Reserva</h2>
+            <form>
+              <input 
+                type="text" 
+                name="nombre" 
+                placeholder="Nombre" 
+                value={formData.nombre} 
+                onChange={handleInputChange} 
+              />
+              <input 
+                type="text" 
+                name="apellido" 
+                placeholder="Apellido" 
+                value={formData.apellido} 
+                onChange={handleInputChange} 
+              />
+              <input 
+                type="text" 
+                name="numero" 
+                placeholder="Número de teléfono" 
+                value={formData.numero} 
+                onChange={handleInputChange} 
+              />
+              <input 
+                type="email" 
+                name="correo" 
+                placeholder="Correo electrónico" 
+                value={formData.correo} 
+                onChange={handleInputChange} 
+              />
+              <input 
+                type="date" 
+                name="fecha" 
+                value={formData.fecha} 
+                onChange={handleInputChange} 
+              />
+              <input 
+                type="time" 
+                name="hora" 
+                value={formData.hora} 
+                onChange={handleInputChange} 
+              />
+            </form>
+            <div className="form-buttons">
+              <button className="confirm-button" onClick={handleConfirmReservation}>Confirmar reserva</button>
+              <button className="cancel-button" onClick={handleCancelReservation}>Cancelar</button>
+            </div>
           </div>
         </div>
       )}

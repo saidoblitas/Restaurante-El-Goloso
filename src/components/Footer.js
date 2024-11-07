@@ -1,24 +1,35 @@
 import React from 'react';
-import { Link } from 'react-router-dom';
+import { Link } from 'react-router-dom';  
+import { useNavigate } from 'react-router-dom';
 import './Footer.css';
-import logo from '../images/logo.png'; 
+import logo from '../images/logo.png';
 
 function Footer() {
+  const navigate = useNavigate();
+
+  const handleLogoClick = () => {
+    navigate('/');
+    window.scrollTo(0, 0); 
+  };
+
   return (
     <footer className="footer">
       <div className="footer-content">
       
         <div className="footer-section logo-section">
-          <img src={logo} alt="Logo Goloso" className="footer-logo" />
+          <img 
+            src={logo} 
+            alt="Logo Goloso" 
+            className="footer-logo" 
+            onClick={handleLogoClick} 
+          />
           <p className="footer-text">
             Goloso Restaurante: donde la buena comida se encuentra con la calidez del hogar.
           </p>
-          
         </div>
 
         <div className="footer-divider"></div>
 
-   
         <div className="footer-section site-map">
           <h4>Mapa del Sitio</h4>
           <ul>
@@ -35,7 +46,6 @@ function Footer() {
 
         <div className="footer-divider"></div>
 
-        
         <div className="footer-section contact-section">
           <h4>LOCALES</h4>
           <div className="contact">

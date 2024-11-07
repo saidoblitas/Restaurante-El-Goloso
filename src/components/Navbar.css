@@ -14,14 +14,15 @@
 
 .navbar-logo {
   display: flex;
-  justify-content: flex-start; /* Alinea el logo a la izquierda */
-  align-items: center; /* Centra el logo verticalmente */
-  height: 100%;  /* Ocupa todo el alto del navbar */
-  margin-right: 20px; /* Espacio a la derecha del logo */
+  justify-content: flex-start;
+  align-items: center;
+  height: 100%;
+  margin-right: 20px;
+  cursor: pointer; 
 }
 
 .logo {
-  height: 150px;  /* Ajusta el tamaño del logo */
+  height: 150px;
   width: auto;
 }
 
@@ -51,6 +52,7 @@
   text-align: center;
   line-height: 60px;
   width: 100%;
+  cursor: pointer;
 }
 
 .nav-link:hover {
