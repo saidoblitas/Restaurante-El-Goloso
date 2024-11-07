@@ -1,14 +1,14 @@
 import React from 'react';
 import { Link, useLocation, useNavigate } from 'react-router-dom';
 import './Navbar.css';
-import logo from '../images/logo.png'; 
+import logo from '../images/logo.png';
 
 function Navbar() {
   const location = useLocation();
-  const navigate = useNavigate(); 
+  const navigate = useNavigate();
 
   const handleLogoClick = () => {
-    navigate('/'); 
+    navigate('/');
     window.scrollTo(0, 0);
   };
 
@@ -19,7 +19,7 @@ function Navbar() {
           src={logo}
           alt="Logo"
           className="logo"
-          onClick={handleLogoClick} 
+          onClick={handleLogoClick}
         />
       </div>
       <ul className="nav-list">
