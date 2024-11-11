@@ -3,7 +3,7 @@ import { BrowserRouter as Router, Route, Routes } from 'react-router-dom';
 import Navbar from './components/Navbar';
 import Footer from './components/Footer';
 
-// Páginas
+
 import HomePage from './pages/HomePage';
 import TeBrindamosPage from './pages/TeBrindamosPage';
 import NuestrasCasasPage from './pages/NuestrasCasasPage';
@@ -17,10 +17,10 @@ function App() {
   return (
     <Router>
       <div style={{ minHeight: '100vh', display: 'flex', flexDirection: 'column' }}>
-        {/* Barra de navegación */}
+       
         <Navbar />
 
-        {/* Contenido de las páginas */}
+        
         <div style={{ flex: 1 }}>
           <Routes>
             <Route path="/" element={<HomePage />} />
@@ -30,11 +30,11 @@ function App() {
             <Route path="/nuestra-historia" element={<NuestraHistoriaPage />} />
             <Route path="/contactanos" element={<ContactanosPage />} />
             <Route path="/reservaciones" element={<ReservacionesPage />} />
-            <Route path="/nuestra-carta" element={<NuestraCartaPage />} /> {/* Corregido aquí */}
+            <Route path="/nuestra-carta" element={<NuestraCartaPage />} /> 
           </Routes>
         </div>
 
-        {/* Footer */}
+        
         <Footer />
       </div>
     </Router>

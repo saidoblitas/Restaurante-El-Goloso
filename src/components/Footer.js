@@ -47,20 +47,21 @@ function Footer() {
         <div className="footer-divider"></div>
 
         <div className="footer-section contact-section">
-          <h4>LOCALES</h4>
-          <div className="contact">
-            <h5>Local La Victoria</h5>
-            <p>Av. los Incas 145, La Victoria 14007. Chiclayo - Peru</p>
-            <p>Teléfono: 956 789 654</p>
-            <p>Email: <a href="mailto:lavictoria@elgoloso.pe">lavictoria@elgoloso.pe</a></p>
-          </div>
-          <div className="contact">
-            <h5>Local Chiclayo</h5>
-            <p>1427 Alfonso Ugarte, Chiclayo - Perú</p>
-            <p>Teléfono: 01 348 7802</p>
-            <p>Email: <a href="mailto:chiclayo@elgoloso.pe">chiclayo@elgoloso.pe</a></p>
-          </div>
-        </div>
+  <h4>LOCALES</h4>
+  <div className="contact">
+    <h5>Local La Victoria</h5>
+    <p>Av. los Incas 145, La Victoria 14007. Chiclayo - Peru</p>
+    <p>Teléfono: 956 789 654</p>
+    <p>Email: <a href="mailto:lavictoria@elgoloso.pe">lavictoria@elgoloso.pe</a></p>
+  </div>
+  <div className="contact">
+    <h5>Local Chiclayo</h5>
+    <p>1427 Alfonso Ugarte, Chiclayo - Perú</p>
+    <p>Teléfono: 01 348 7802</p>
+    <p>Email: <a href="mailto:chiclayo@elgoloso.pe">chiclayo@elgoloso.pe</a></p>
+  </div>
+</div>
+
       </div>
 
       <div className="footer-bottom">

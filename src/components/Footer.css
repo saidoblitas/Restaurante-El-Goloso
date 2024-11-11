@@ -87,3 +87,23 @@
     padding-top: 5px;
     font-size: 13px; 
 }
+.footer-section.contact-section {
+    margin: 0;
+    padding: 0;
+}
+
+.contact {
+    margin: 0;
+    padding: 0;
+}
+
+.contact h5,
+.contact p {
+    margin: 0;
+    padding: 0;
+}
+
+.contact a {
+    text-decoration: none;
+    color: white; 
+}
