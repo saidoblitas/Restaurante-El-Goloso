@@ -11,13 +11,12 @@ const LoginPage = () => {
         />
       </div>
 
-     
+
       <div className="login-form">
         <div className="form-container">
-          {/* Título */}
+
           <h1 className="login-title">LOGIN</h1>
 
-          {/* Campos de entrada */}
           <form>
             <div className="form-group">
               <input
@@ -34,25 +33,21 @@ const LoginPage = () => {
               />
             </div>
 
-            {/* Botón de entrada */}
             <button type="submit" className="form-button">
               ENTRAR
             </button>
 
-            {/* Enlace de recuperación de contraseña */}
             <div className="form-link">
               <a href="/forgot-password">Olvide contraseña</a>
             </div>
           </form>
 
-          {/* Enlace de registro */}
           <div className="register-link">
             ¿No tienes una cuenta?{' '}
             <a href="/register">Regístrate</a>
           </div>
         </div>
 
-        {/* Firma */}
         <footer className="footer">
           <em>El Goloso</em>
         </footer>
